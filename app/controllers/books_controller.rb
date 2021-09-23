@@ -13,6 +13,8 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book.id)
     else
+      @books = Book.all
+      #ヒント6 空白で投稿したとき@books追加
       render :index
     end
   end
